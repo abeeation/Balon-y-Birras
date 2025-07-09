@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Balón y Birras | Últimas Noticias</title>
+  <style>
+    :root {
+      --verde-futbol: #2e7d32;
+      --verde-transparente: rgba(46, 125, 50, 0.6);
+      --verde-suave: #e8f5e9;
+      --negro: #111;
+      --blanco: #fff;
+      --gris-texto: #444;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff;
+      color: var(--negro);
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background: var(--verde-transparente);
+      backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+
+    .menu-button {
+      position: absolute;
+      left: 1rem;
+      font-size: 1.8rem;
+      background: none;
+      border: none;
+      color: var(--blanco);
+      cursor: pointer;
+    }
+
+    .nav-title a {
+      font-size: 1.6rem;
+      font-style: italic;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--blanco);
+      text-decoration: none;
+      text-shadow: 0 0 5px rgba(0,0,0,0.5);
+    }
+
+    .side-menu {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      background-color: var(--verde-futbol);
+      color: var(--blanco);
+      transition: left 0.3s ease;
+      padding-top: 70px;
+      z-index: 999;
+    }
+
+    .side-menu a {
+      display: block;
+      padding: 1rem 1.5rem;
+      text-decoration: none;
+      color: var(--blanco);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .side-menu a:hover {
+      background-color: rgba(255,255,255,0.1);
+    }
+
+    .side-menu.open {
+      left: 0;
+    }
+
+    .contenido {
+      padding: 6rem 1.5rem 3rem;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: var(--verde-futbol);
+    }
+
+    article {
+      margin-bottom: 2.5rem;
+      border: 1px solid #ddd;
+      border-left: 5px solid var(--verde-futbol);
+      padding: 1rem;
+      transition: transform 0.2s ease;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+    }
+
+    article:hover {
+      transform: scale(1.01);
+    }
+
+    article a {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    article img {
+      width: 100%;
+      border-radius: 6px;
+      margin-bottom: 0.8rem;
+    }
+
+    article h2 {
+      font-size: 1.3rem;
+      margin: 0;
+      color: var(--gris-texto);
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Barra superior -->
+  <nav>
+    <button class="menu-button" onclick="toggleMenu()">☰</button>
+    <div class="nav-title"><a href="index.html">BALÓN Y BIRRAS</a></div>
+  </nav>
+
+  <!-- Menú lateral -->
+  <div class="side-menu" id="sideMenu">
+    <a href="index.html">Inicio</a>
+    <a href="ultimas.html">Últimas noticias</a>
+  </div>
+
+  <div class="contenido">
+    <h1>Últimas noticias</h1>
+
+    <!-- 📌 NOTICIA 1 -->
+    <article>
+      <a href="calabria.html">
+        <img src="https://balonybirras.netlify.app/images/calabria.jpg" alt="Imagen de la noticia">
+        <h2>Calabria interesa al Mallorca</h2>
+      </a>
+    </article>
+
+    <!-- 📌 NOTICIA 2 -->
+    <article>
+      <a href="valverde.html">
+        <img src="https://balonybirras.netlify.app/images/valverde.jpg" alt="Imagen de la noticia">
+        <h2>Valverde suena para el City</h2>
+      </a>
+    </article>
+
+    <!-- 📌 NOTICIA 3 -->
+    <article>
+      <a href="bellingham.html">
+        <img src="https://balonybirras.netlify.app/images/bellingham.jpg" alt="Imagen de la noticia">
+        <h2>Bellingham, MVP de la Euro</h2>
+      </a>
+    </article>
+  </div>
+
+  <footer>
+    © 2025 Balón y Birras | Fútbol comentado como en el bar 🍻
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('sideMenu').classList.toggle('open');
+    }
+  </script>
+
+</body>
+</html>
