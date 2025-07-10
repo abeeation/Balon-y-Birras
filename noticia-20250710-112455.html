@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Balón y Birras | Noticia</title>
+
+<!-- Twitter Card -->
+<!-- Twitter Card meta tags -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content= "¡ Lucas Ahijado, carbayón de corazón, se queda en el Oviedo hasta 2026!)" />
+<meta name="twitter:description" content="Fútbol comentado como en el bar 🍻 en Balón y Birras" />
+<meta name="twitter:image" content="https://e00-xlk-ue-marca.uecdn.es/uploads/2025/07/10/686fd7ba62640.jpeg" />
+<meta name="twitter:image:alt" content="Balón y Birras" />
+<meta name="twitter:site" content="@balonybirras" />
+<meta name="twitter:creator" content="@balonybirras" />
+
+  <style>
+    :root {
+      --verde-futbol: #2e7d32;
+      --verde-transparente: rgba(46, 125, 50, 0.6);
+      --verde-suave: #e8f5e9;
+      --negro: #111;
+      --gris-texto: #555;
+      --blanco: #fff;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: white;
+      color: var(--negro);
+    }
+
+    /* NAVBAR */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: var(--blanco);
+      transform: translateY(-100%);
+      transition: transform 0.3s ease;
+      background: var(--verde-transparente);
+      backdrop-filter: blur(8px);
+      z-index: 1000;
+    }
+
+    nav.visible {
+      transform: translateY(0);
+    }
+
+    .nav-title a {
+      font-size: 1.6rem;
+      font-style: italic;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--blanco);
+    }
+
+    .menu-button {
+      position: absolute;
+      left: 1rem;
+      font-size: 1.8rem;
+      background: none;
+      border: none;
+      color: var(--blanco);
+      cursor: pointer;
+    }
+
+    .side-menu {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      background-color: var(--verde-futbol);
+      color: var(--blanco);
+      transition: left 0.3s ease;
+      padding-top: 70px;
+      z-index: 999;
+    }
+
+    .side-menu a {
+      display: block;
+      padding: 1rem 1.5rem;
+      text-decoration: none;
+      color: var(--blanco);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .side-menu a:hover {
+      background-color: rgba(255,255,255,0.1);
+    }
+
+    .side-menu.open {
+      left: 0;
+    }
+
+    .imagen-top {
+      position: relative;
+      width: 100%;
+      height: 280px;
+      overflow: hidden;
+    }
+
+    .imagen-top img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(70%);
+    }
+
+    .titulo-sobre-imagen {
+      position: absolute;
+      bottom: 1rem;
+      left: 1rem;
+      right: 1rem;
+      color: var(--blanco);
+      font-size: 2rem;
+      font-weight: bold;
+      text-shadow: 0 0 10px rgba(0,0,0,0.7);
+      padding-left: 0.5rem;
+    }
+
+    .contenido {
+      max-width: 800px;
+      margin: auto;
+      padding: 2rem;
+    }
+
+    .meta {
+      color: var(--gris-texto);
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+      margin-bottom: 2rem;
+      padding-left: 0.5rem;
+    }
+
+    article {
+      background-color: var(--verde-suave);
+      padding: 2rem;
+      border-radius: 0;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+      border-left: 5px solid var(--verde-futbol);
+      font-size: 1.05rem;
+      color: var(--gris-texto);
+    }
+
+    article p {
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+      text-indent: 1.5em;
+    }
+
+    article img {
+      width: 100%;
+      border-radius: 8px;
+      margin: 1.5rem 0;
+    }
+
+    strong {
+      color: var(--verde-futbol);
+    }
+
+    footer {
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: #999;
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid #eee;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 🔝 NAV SUPERIOR -->
+  <nav id="navbar">
+    <button class="menu-button" onclick="toggleMenu()">☰</button>
+    <div class="nav-title"><a href="https://abeeation.github.io/Balon-y-Birras">BALÓN Y BIRRAS</a></div>
+  </nav>
+
+  <!-- 🟢 MENÚ LATERAL -->
+  <div class="side-menu" id="sideMenu">
+    <a href="https://abeeation.github.io/Balon-y-Birras">Inicio</a>
+    <a href="https://abeeation.github.io/Balon-y-Birras/iultimas.html">Últimas noticias</a>
+  </div>
+
+  <!-- 🖼️ IMAGEN DESTACADA -->
+  <div class="imagen-top" id="topImage">
+    <img 
+  src="https://e00-xlk-ue-marca.uecdn.es/uploads/2025/07/10/686fd7ba62640.jpeg" 
+  alt="Imagen destacada de la noticia"
+  onerror="this.onerror=null; this.src='https://cdn.pixabay.com/photo/2024/05/27/12/11/party-8790935_1280.jpg';"
+/>
+
+    <div class="titulo-sobre-imagen">"¡ Lucas Ahijado, carbayón de corazón, se queda en el Oviedo hasta 2026!)"</div>
+  </div>
+
+  <div class="contenido">
+    <div class="meta">Publicado el Thu, 10 Jul 2025 17:10:30 +0200</div>
+
+    <article>
+      El Real Oviedo ha anunciado la renovación del contrato de Lucas Ahijado por una temporada más, hasta 2026. Lucas, que es originario de la cantera del club, ha mostrado su satisfacción por seguir vinculado al equipo en el que ha crecido como futbolista.
+
+El jugador de 23 años ha disputado un total de 50 partidos con el primer equipo desde su debut en la temporada 2021/2022. Ahijado ha demostrado ser un jugador polivalente y comprometido, capaz de desempeñarse en diferentes posiciones del campo.
+
+El director deportivo del Real Oviedo, José Manuel Barla, ha destacado la importancia de la renovación de Ahijado para el proyecto del equipo: "Estamos muy contentos de haber llegado a un acuerdo con Lucas. Es un jugador joven y con mucha proyección, que ha demostrado su compromiso con el club. Seguir contando con él es una gran noticia para nosotros".
+
+La afición oviedista también ha mostrado su satisfacción por la renovación de Ahijado, que se ha ganado el cariño de la grada por su entrega y su trabajo en el terreno de juego. El canterano es uno de los símbolos de la cantera del Real Oviedo y su continuidad en el equipo es una garantía de estabilidad y de futuro.
+
+Lucas Ahijado se ha formado en las categorías inferiores del club y ha ido subiendo poco a poco hasta consolidarse en el primer equipo. Su renovación es un ejemplo de la apuesta del Real Oviedo por la cantera y por los jugadores que han crecido en la entidad.
+
+El futuro de Lucas Ahijado sigue ligado al Real Oviedo y la afición espera seguir disfrutando de su juego y de su compromiso con el equipo. El canterano seguirá trabajando duro para seguir creciendo como futbolista y para ayudar al Real Oviedo a conseguir sus objetivos en las próximas temporadas.
+    </article>
+
+    <footer>
+      © 2025 Balón y Birras | Fútbol comentado como en el bar 🍻
+    </footer>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('sideMenu').classList.toggle('open');
+    }
+
+    window.addEventListener('scroll', function () {
+      const nav = document.getElementById('navbar');
+      const imageHeight = document.getElementById('topImage').offsetHeight;
+
+      if (window.scrollY > imageHeight - 60) {
+        nav.classList.add('visible');
+      } else {
+        nav.classList.remove('visible');
+      }
+    });
+  </script>
+
+</body>
+</html>
